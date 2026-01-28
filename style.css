@@ -1,10 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+
 body {
     background-color: hsl(214, 17%, 92%);
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 13px;
 }
 
 main {
@@ -20,12 +28,14 @@ main {
     padding: 3em;
     border-radius: 0.7em;
     margin-top: 2em;
-    box-shadow: hsl(0, 0%, 81%) 60px 60px 60px;
+    box-shadow: hsl(0, 0%, 81%) 100px 100px 50px;
     background-color: white;
+    color: hsl(217, 19%, 35%);
+    width: 100%;
 }
 
-.card h3 {
-    margin-top: 1em;
+.card h2 {
+    margin-bottom: 1em;
 }
 
 .nametag {
@@ -33,6 +43,7 @@ main {
     align-items: center;
     margin-bottom: 1em;
 }
+
 
 .avatar {
     border-radius: 50px;
@@ -47,6 +58,9 @@ main {
     color: hsl(0, 0%, 100%);
     border-color: hsl(264, 82%, 80%);
 }
+.dimmed {
+    opacity: 60%;
+}
 
 .gray {
     background-color: hsl(217, 19%, 35%);
@@ -58,4 +72,42 @@ main {
     background-color: hsl(219, 29%, 14%);
     color: hsl(0, 0%, 100%);
     border-color: hsl(263, 55%, 52%);
+}
+
+.daniel {
+    grid-area: daniel;
+}
+
+.jonathan {
+    grid-area: jonathan;
+}
+
+.kira {
+    grid-area: kira;
+}
+
+.patrick {
+    grid-area: patrick;
+}
+
+.jeanette {
+    grid-area: jeanette;
+}
+
+@media screen and (min-width: 1440px) {
+    main {
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-areas:
+        "daniel daniel jonathan kira"
+        "jeanette patrick patrick kira";
+        gap: 2em;
+        row-gap: 0;
+        align-items: unset;
+    }
+    .daniel {
+        background-image: url(/images/bg-pattern-quotation.svg);
+        background-repeat: no-repeat;
+        background-position: 85% 0%;
+    }
 }
